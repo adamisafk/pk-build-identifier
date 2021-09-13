@@ -29,13 +29,13 @@ public class PKBuildIndicatorPlugin extends Plugin
 	@Override
 	protected void startUp() throws Exception
 	{
-		log.info("Example started!");
+		log.info("PK Build Indicator started!");
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-		log.info("Example stopped!");
+		log.info("PK Build Indicator stopped!");
 	}
 
 	@Subscribe
@@ -43,7 +43,7 @@ public class PKBuildIndicatorPlugin extends Plugin
 	{
 		if (gameStateChanged.getGameState() == GameState.LOGGED_IN)
 		{
-			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Example says " + config.greeting(), null);
+			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "PK Build Indicator says " + config.greeting(), null);
 		}
 	}
 
