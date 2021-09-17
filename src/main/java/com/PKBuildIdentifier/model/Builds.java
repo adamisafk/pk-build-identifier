@@ -1,4 +1,4 @@
-package com.PKBuildIndicator.model;
+package com.PKBuildIdentifier.model;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
