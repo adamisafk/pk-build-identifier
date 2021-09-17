@@ -15,6 +15,8 @@ def runeLiteVersion = '1.7.24'
 dependencies {
 	compileOnly group: 'net.runelite', name:'client', version: runeLiteVersion
 
+	implementation("com.squareup.okhttp3:okhttp:4.9.0")
+
 	compileOnly 'org.projectlombok:lombok:1.18.20'
 	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 
@@ -23,7 +25,7 @@ dependencies {
 	testImplementation group: 'net.runelite', name:'jshell', version: runeLiteVersion
 }
 
-group = 'com.PKBuildIndicator'
+group = 'com.PKBuildIdentifier'
 version = '1.0-SNAPSHOT'
 sourceCompatibility = '1.8'
 

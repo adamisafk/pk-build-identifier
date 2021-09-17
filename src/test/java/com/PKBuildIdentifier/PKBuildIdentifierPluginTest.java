@@ -1,13 +1,13 @@
-package com.PKBuildIndicator;
+package com.PKBuildIdentifier;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class PKBuildIndicatorPluginTest
+public class PKBuildIdentifierPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(PKBuildIndicatorPlugin.class);
+		ExternalPluginManager.loadBuiltin(PKBuildIdentifierPlugin.class);
 		RuneLite.main(args);
 	}
 }

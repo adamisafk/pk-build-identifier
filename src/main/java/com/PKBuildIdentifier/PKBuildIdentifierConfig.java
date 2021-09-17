@@ -1,23 +1,18 @@
-package com.PKBuildIndicator;
+package com.PKBuildIdentifier;
 
-import com.PKBuildIndicator.model.Builds;
+import com.PKBuildIdentifier.model.Builds;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 import net.runelite.client.config.ConfigSection;
 
-import java.awt.*;
-
-@ConfigGroup(PKBuildIndicatorConfig.CONFIG_GROUP)
-public interface PKBuildIndicatorConfig extends Config
+@ConfigGroup(PKBuildIdentifierConfig.CONFIG_GROUP)
+public interface PKBuildIdentifierConfig extends Config
 {
-	String CONFIG_GROUP = "PKBuildIndicator";
+	String CONFIG_GROUP = "PKBuildIdentifier";
 	String ENABLE_HELPER_PANEL = "enableHelperPanel";
-	String ENABLE_BUILD_INDICATORS = "enableBuildIndicators";
 	String ENABLE_MENU_ENTRY = "enableMenuEntry";
 	String SELECT_CURRENT_BUILD = "selectCurrentBuild";
-	String SHOW_INDICATORS_IN_PVP = "showIndicatorsInPVP";
-	String PICK_INDICATOR_COLOUR = "pickIndicatorColour";
 	String SHOW_BUILD_DESCRIPTION = "showBuildDescription";
 	String SHOW_POSSIBLE_WEAPONS = "showPossibleWeapons";
 	String SHOW_POSSIBLE_SPECS = "showPossibleSpecs";
@@ -25,25 +20,15 @@ public interface PKBuildIndicatorConfig extends Config
 	String SHOW_POSSIBLE_ARMOUR = "showPossibleArmour";
 	String SHOW_POSSIBLE_PRAYERS = "showPossiblePrayers";
 	String SHOW_TIPS = "showTips";
-	String REPLACE_REPORT_ENTRY = "replaceReportEntry";
-	String PICK_ENTRY_COLOUR = "pickEntryColour";
 
 
 	/*
 		SECTIONS
 	 */
 
-	// Indicators
-	@ConfigSection(
-			position = 1,
-			name = "Indicator Settings",
-			description = "Settings for player indicators."
-	)
-	String indicatorSection = "indicatorSection";
-
 	// Panel
 	@ConfigSection(
-			position = 2,
+			position = 1,
 			name = "Panel Settings",
 			description = "Settings for the PK Build Helper panel."
 	)
@@ -51,7 +36,7 @@ public interface PKBuildIndicatorConfig extends Config
 
 	// Menu Entry
 	@ConfigSection(
-			position = 3,
+			position = 2,
 			name = "Menu Entry Settings",
 			description = "Settings for menu entry."
 	)
@@ -59,7 +44,7 @@ public interface PKBuildIndicatorConfig extends Config
 
 	// Misc
 	@ConfigSection(
-			position = 4,
+			position = 3,
 			name = "Misc. Settings",
 			description = "Settings for miscellaneous options."
 	)
@@ -68,44 +53,6 @@ public interface PKBuildIndicatorConfig extends Config
 	/*
 		ITEMS
 	 */
-
-	// Indicators
-
-	@ConfigItem(
-			position = 1,
-			keyName = ENABLE_BUILD_INDICATORS,
-			name = "Enable Build Indicators",
-			description = "When enabled, build indicators are shown above players' heads.",
-			section = indicatorSection
-	)
-	default boolean enableBuildIndicators()
-	{
-		return true;
-	}
-
-	@ConfigItem(
-			position = 2,
-			keyName = SHOW_INDICATORS_IN_PVP,
-			name = "Only show in PVP worlds or wilderness",
-			description = "Will only enable player indicators when in wilderness or on PVP worlds.",
-			section = indicatorSection
-	)
-	default boolean showIndicatorsInPVP()
-	{
-		return false;
-	}
-
-	@ConfigItem(
-			position = 3,
-			keyName = PICK_INDICATOR_COLOUR,
-			name = "Indicator Colour",
-			description = "Colour of build indicators.",
-			section = indicatorSection
-	)
-	default Color pickIndicatorColour()
-	{
-		return Color.RED;
-	}
 
 	// Panel
 
@@ -216,29 +163,8 @@ public interface PKBuildIndicatorConfig extends Config
 	)
 	default boolean enableMenuEntry()
 	{
-		return false;
+		return true;
 	}
-
-	@ConfigItem(
-			position = 2,
-			keyName = REPLACE_REPORT_ENTRY,
-			name = "Replace 'Report' with 'View Build'",
-			description = "When enabled, the 'Report' right-click option will be replaced with 'View Build'.",
-			section = menuEntrySection
-	)
-	default boolean replaceReportEntry()
-	{
-		return false;
-	}
-
-	@ConfigItem(
-			position = 3,
-			keyName = PICK_ENTRY_COLOUR,
-			name = "'View Build' Colour",
-			description = "Select default colour for 'View Build' option.",
-			section = menuEntrySection
-	)
-	Color pickEntryColour();
 
 	// Misc
 
